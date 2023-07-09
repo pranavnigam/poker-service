@@ -105,6 +105,11 @@ const port = 8080;
 
 //Rest Call Info
 
+app.get("/", (req, res) => {
+  console.log("Server is up and running")
+  res.send("Server is up and running");
+})
+
 app.post("/create-room", (req, res) => {
   const roomId = generateUniqueRoomId(8, userDetails);
   const userId = generateUniqueUserId(8, userIdList);
