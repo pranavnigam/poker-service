@@ -101,7 +101,7 @@ io.on("connection", (socket) => {
 
 });
 
-const port = 8080;
+const port = 22;
 
 //Rest Call Info
 
