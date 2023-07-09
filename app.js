@@ -173,9 +173,13 @@ app.post("/cast-vote", (req, res) => {
     });
     req.session.user = user;
     userDetails.set(user.roomId, roomUsers);
+    
+    roomUsers.forEach(user => {
+      delete user.vote;
+    });
 
     //Send Info to all users who have voted
-    emitOnUpdateRoom("vote-casted", user.roomId, {...user, voted: true});
+    emitOnUpdateRoom("vote-casted", user.roomId, {"userDetails": roomUsers});
     
     res.status(201).send({
       status: 201,
