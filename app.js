@@ -174,8 +174,7 @@ app.post("/cast-vote", (req, res) => {
     req.session.user = user;
     userDetails.set(user.roomId, roomUsers);
     
-    const updatedRoomUsers = [...roomUsers];
-
+    const updatedRoomUsers = JSON.parse(JSON.stringify(roomUsers));
     updatedRoomUsers.forEach(user => {
       delete user.vote;
     });
