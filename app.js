@@ -19,7 +19,7 @@ const userIdList = [];
 
 app.use(
   cors({
-    origin: "http://ec2-3-135-237-158.us-east-2.compute.amazonaws.com:3000",
+    origin: "http://ec2-3-136-37-255.us-east-2.compute.amazonaws.com:3000",
     methods: ["GET", "POST"],
     credentials: true,
   })
@@ -46,7 +46,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "http://ec2-3-135-237-158.us-east-2.compute.amazonaws.com:3000",
+    origin: "http://ec2-3-136-37-255.us-east-2.compute.amazonaws.com:3000",
     methods: ["GET", "POST"],
     credentials: true,
   },
